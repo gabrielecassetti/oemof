@@ -98,7 +98,7 @@ def create_dataframe(om):
     return df
 
 
-def results(om):
+def results(om, keys_as_str=False):
     """
     Create a result dictionary from the result DataFrame.
 
@@ -145,7 +145,7 @@ def results(om):
             else:
                 result[(bus, None)]['sequences']['duals'] = duals
 
-    return result
+    return convert_keys_to_strings(result) if keys_as_str else result
 
 
 def convert_keys_to_strings(results):
