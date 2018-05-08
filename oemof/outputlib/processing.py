@@ -148,7 +148,7 @@ def results(om, keys_as_str=False):
     return convert_keys_to_strings(result) if keys_as_str else result
 
 
-def convert_keys_to_strings(results):
+def convert_keys_to_strings(result):
     """
     Convert the dictionary keys to strings.
 
@@ -158,7 +158,7 @@ def convert_keys_to_strings(results):
     """
     converted = {
         tuple([str(e) for e in k]) if isinstance(k, tuple) else str(k): v
-        for k, v in results.items()
+        for k, v in result.items()
     }
     return converted
 
